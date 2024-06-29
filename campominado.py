@@ -23,19 +23,21 @@ def print_board(b, v):
 
 # Inicio Victor
 
-def save_score(n, p):
-    with open('ranking.txt', 'a') as f:
-        f.write(f'{n} {p}\n')
+def salvar_pontuacao(nome, pontos):
+    with open('ranking.txt', 'a') as arquivo:
+        arquivo.write(f'{nome} {pontos}\n')
 
-def show_ranking():
+def exibir_ranking():
     try:
-        with open('ranking.txt', 'r') as f:
-            r = f.readlines()
-        r.sort(key=lambda x: int(x.split()[1]), reverse=True)
-        print("Ranking (👑 Top 5 👑):\n====================================")
-        for x in r[:5]: print(x.strip())
+        with open('ranking.txt', 'r') as arquivo:
+            rankings = arquivo.readlines()
+        rankings.sort(key=lambda x: int(x.split()[1]), reverse=True)
+        print("Ranking (👑 Top 5 👑):")
         print("====================================")
-    except:
+        for ranking in rankings[:5]:
+            print(ranking.strip())
+        print("====================================")
+    except FileNotFoundError:
         print("Nenhum ranking encontrado.")
 
 # Fim Victor
