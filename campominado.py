@@ -8,13 +8,18 @@ def init(t, m):
             b[r][c], mc = '*', mc + 1
     return b
 
-def cnt(b, r, c):
-    t, n = len(b), 0
-    for i in range(max(0, r - 1), min(t, r + 2)):
-        for j in range(max(0, c - 1), min(t, c + 2)):
-            if b[i][j] == '*': n += 1
-    return n
+# Início Rafael
+def contar_minas_ao_redor(tabuleiro, linha, coluna):
+    tamanho = len(tabuleiro)
+    minas_ao_redor = 0
+    for i in range(max(0, linha - 1), min(tamanho, linha + 2)):
+        for j in range(max(0, coluna - 1), min(tamanho, coluna + 2)):
+            if tabuleiro[i][j] == '*':
+                minas_ao_redor += 1
+#Fim Rafael
 
+
+    return minas_ao_redor
 def print_board(b, v):
     for i in range(len(b)):
         for j in range(len(b)):
