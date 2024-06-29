@@ -40,22 +40,49 @@ def show_ranking():
 
 # Fim Victor
 
-def game():
-    b, v, t, m = init(8, 10), [[False for _ in range(8)] for _ in range(8)], 8, 10
-    n, s, p = input("Digite seu nome:"), time.time(), 0
+# Inicio Éverson
+
+    # Função principal do jogo Campo Minado
+def jogo_campo_minado():
+    tamanho = 8
+    numero_de_minas = 10
+    tabuleiro = inicializar_tabuleiro(tamanho, numero_de_minas)
+    visivel = [[False for _ in range(tamanho)] for _ in range(tamanho)]
+
+    nome = input("Digite seu nome: ")
+    inicio_tempo = time.time()
+    pontos = 0
+
     while True:
-        print_board(b, v)
-        try:
-            r, c = int(input(f"Digite a linha (0 a {t - 1}): ")), int(input(f"Digite a coluna (0 a {t - 1}): "))
-            if r < 0 or r >= t or c < 0 or c >= t: print("❌ Posição inválida, tente novamente. ❌"); continue
-        except: print("❌ Entrada inválida, por favor insira números. ❌"); continue
-        if b[r][c] == '*': print("====================================\n💣 Você pisou em uma mina! Fim de jogo. 💣"); break
-        if not v[r][c]: v[r][c], b[r][c], p = True, str(cnt(b, r, c)), p + 10
-        if all(all(c == '*' or v for c, v in zip(l, vl)) for l, vl in zip(b, v)): print("\n🎉🎉 Parabéns, você venceu! 🎉🎉"); break
-    e = time.time()
-    save_score(n, p)
-    print(f"\n🕘 Seu tempo foi de {e - s:.2f} segundos. 🕒\n\n🚩 Sua pontuação foi de {p} pontos. 🚩\n")
-    show_ranking()
+        imprimir_tabuleiro(tabuleiro, visivel)
+        linha = obter_entrada_valida(f"Digite a linha (0 a {tamanho - 1}): ", tamanho)
+        coluna = obter_entrada_valida(f"Digite a coluna (0 a {tamanho - 1}): ", tamanho)
+
+        if tabuleiro[linha][coluna] == '*':
+            print("====================================")
+            print("💣 Você pisou em uma mina! Fim de jogo. 💣")
+            break
+        else:
+            if not visivel[linha][coluna]:
+                visivel[linha][coluna] = True
+                minas_ao_redor = contar_minas_ao_redor(tabuleiro, linha, coluna)
+                tabuleiro[linha][coluna] = str(minas_ao_redor)
+                pontos += 10
+
+            if all(all(c == '*' or v for c, v in zip(linha, visivel_linha)) for linha, visivel_linha in zip(tabuleiro, visivel)):
+                print("====================================")
+                print("🎉🎉 Parabéns, você venceu! 🎉🎉")
+                break
+
+    fim_tempo = time.time()
+    tempo_total = fim_tempo - inicio_tempo
+
+    salvar_pontuacao(nome, pontos)
+    print(f"🕘 Seu tempo foi de {tempo_total:.2f} segundos. 🕒")
+    print(f"🚩 Sua pontuação foi de {pontos} pontos. 🚩")
+    exibir_ranking()
 
 if __name__ == "__main__":
-    game()
+    jogo_campo_minado()
+
+    #Fim Éverson
