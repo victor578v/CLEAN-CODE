@@ -16,10 +16,9 @@ def contar_minas_ao_redor(tabuleiro, linha, coluna):
         for j in range(max(0, coluna - 1), min(tamanho, coluna + 2)):
             if tabuleiro[i][j] == '*':
                 minas_ao_redor += 1
+    return minas_ao_redor
 #Fim Rafael
 
-
-    return minas_ao_redor
 def print_board(b, v):
     for i in range(len(b)):
         for j in range(len(b)):
