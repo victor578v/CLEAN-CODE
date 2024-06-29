@@ -1,12 +1,23 @@
 import random, time
 
-def init(t, m):
-    b, mc = [[' ' for _ in range(t)] for _ in range(t)], 0
-    while mc < m:
-        r, c = random.randint(0, t - 1), random.randint(0, t - 1)
-        if b[r][c] != '*':
-            b[r][c], mc = '*', mc + 1
-    return b
+# Início Manu
+
+def inicializar_tabuleiro(tamanho, numero_de_minas):
+
+    tabuleiro = [[' ' for _ in range(tamanho)] for _ in range(tamanho)]
+    minas_colocadas = 0
+
+    # Coloca minas aleatoriamente no tabuleiro
+    while minas_colocadas < numero_de_minas:
+        linha = random.randint(0, tamanho - 1)
+        coluna = random.randint(0, tamanho - 1)
+        if tabuleiro[linha][coluna] != '*':
+            tabuleiro[linha][coluna] = '*'
+            minas_colocadas += 1
+    
+    return tabuleiro
+
+# Fim Manu 
 
 # Início Rafael
 def contar_minas_ao_redor(tabuleiro, linha, coluna):
