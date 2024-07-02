@@ -30,11 +30,17 @@ def contar_minas_ao_redor(tabuleiro, linha, coluna):
     return minas_ao_redor
 #Fim Rafael
 
-def print_board(b, v):
-    for i in range(len(b)):
-        for j in range(len(b)):
-            print(b[i][j] if v[i][j] else '■', end=' ')
+#Inicio Py
+def imprimir_tabuleiro(tabuleiro, visivel):
+    tamanho = len(tabuleiro)
+    for i in range(tamanho):
+        for j in range(tamanho):
+            if visivel[i][j]:
+                print(tabuleiro[i][j], end=' ')
+            else:
+                print('■', end=' ')
         print()
+#Fim Py
 
 # Inicio Victor
 
@@ -56,6 +62,19 @@ def exibir_ranking():
         print("Nenhum ranking encontrado.")
 
 # Fim Victor
+
+#Inicio Py
+def obter_entrada_valida(mensagem, tamanho):
+    while True:
+        try:
+            valor = int(input(mensagem))
+            if 0 <= valor < tamanho:
+                return valor
+            else:
+                print(f"❌ Posição inválida, deve ser entre 0 e {tamanho - 1}. ❌")
+        except ValueError:
+            print("❌ Entrada inválida, por favor insira um número. ❌")
+#Fim Py
 
 # Inicio Éverson
 
