@@ -2,11 +2,11 @@
 Utilizamos como base um projeto da faculdade, que consiste em um jogo de campo minado funcionando no prompt de comando, para implementar a feature de Clean Code ensinada nas aulas de Engenharia de Software II.
 
 # Colaboradores
-Éverson prieto
-Gustavo Py
-Manuela Lobato
-Rafael Valente
-Victor Andrei
+## Éverson prieto
+## Gustavo Py
+## Manuela Lobato
+## Rafael Valente
+## Victor Andrei
 
 ## Prints dos códigos sujos e posteriormente refatorados
 Código sujo e limpo Éverson Prieto:
