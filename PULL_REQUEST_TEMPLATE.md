@@ -16,9 +16,9 @@ Limpo:
 
 Código sujo e limpo Rafael Valente:
 Sujo:
-![sujo rafa](https://github.com/victor578v/CLEAN-CODE/assets/134510073/90437b04-a3f5-4f75-80d8-da0f21398a32)
+<img width="730" alt="image" src="![sujo rafa](https://github.com/victor578v/CLEAN-CODE/assets/134510073/90437b04-a3f5-4f75-80d8-da0f21398a32)">
 Limpo:
-![limpo rafa](https://github.com/victor578v/CLEAN-CODE/assets/134510073/8532ec85-ae35-4618-8c21-e6d38dd29f04)
+<img width="730" alt="image" src="![limpo rafa](https://github.com/victor578v/CLEAN-CODE/assets/134510073/8532ec85-ae35-4618-8c21-e6d38dd29f04)">
 
 Código sujo e limpo Manuela Lobato:
 Sujo:
