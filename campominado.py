@@ -21,13 +21,16 @@ def inicializar_tabuleiro(tamanho, numero_de_minas):
 
 # Início Rafael
 def contar_minas_ao_redor(tabuleiro, linha, coluna):
+
     tamanho = len(tabuleiro)
     minas_ao_redor = 0
+
     for i in range(max(0, linha - 1), min(tamanho, linha + 2)):
         for j in range(max(0, coluna - 1), min(tamanho, coluna + 2)):
             if tabuleiro[i][j] == '*':
                 minas_ao_redor += 1
-    return minas_ao_redor
+
+    return minas_ao_redor
 #Fim Rafael
 
 #Inicio Py
