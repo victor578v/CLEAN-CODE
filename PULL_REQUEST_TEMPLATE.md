@@ -1,13 +1,6 @@
 # Descrição
 Utilizamos como base um projeto da faculdade, que consiste em um jogo de campo minado funcionando no prompt de comando, para implementar a feature de Clean Code ensinada nas aulas de Engenharia de Software II.
 
-# Colaboradores
-## Éverson prieto
-## Gustavo Py
-## Manuela Lobato
-## Rafael Valente
-## Victor Andrei
-
 ## Prints dos códigos sujos e posteriormente refatorados
 Código sujo e limpo Éverson Prieto:
 Sujo:
@@ -56,3 +49,10 @@ Teste realizado no Pytest:
 ![teste pytest](https://github.com/victor578v/CLEAN-CODE/assets/134510073/efe35e11-cfaa-47eb-a552-a56abad32af2)
 
 ![resultado](https://github.com/victor578v/CLEAN-CODE/assets/134510073/6d1f5249-1497-4c96-afa0-5cc14191fa73)
+
+# Colaboradores
+## Éverson prieto
+## Gustavo Py
+## Manuela Lobato
+## Rafael Valente
+## Victor Andrei
